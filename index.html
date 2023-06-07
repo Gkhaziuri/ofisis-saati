@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraph">not clicked</p>
+
+    <script>
+        // შექმენით ფუნქცია რომელიც არგუმენტად მიიღებს სახელების მასივს და დააბრუნებს მხოლოდ იმ სახელებს რომლის სიგრძეც მეტია 5ზე; ფუნქცია გამოიძახეთ და დალოგეთ კონსოლში
+        
+        function getFilteredNamesByLength(namesArray) {
+            let filteredNames = namesArray.filter((item) => item.length > 5 || item.length === 3 )
+            return filteredNames;
+        }
+        let names = ["Giorgi", "Saba", "Nika", "Luka", "Dimitri", "Mari", "Salome", "Ani", "Nia"];
+        const studentsName = getFilteredNamesByLength(names);
+        console.log(studentsName);
+
+        // შექმენით ფუნქცია რომელიც არგუმენტად მიიღებს რიცხვებს და დააბრუნებს ამ რიცხვების ჯამს; ფუნქცია გამოიძახეთ და დალოგეთ კონსოლში
+        
+        function getSumOfNumbers(numbers) {
+            let sum = 0;
+            for( let i = 0; i < numbers.length; i++) {
+                sum = sum + numbers[i];
+            }
+            return sum;
+        }
+        let numbers = [50, 7, 60, 105];
+        const numbersSUm = getSumOfNumbers(numbers);
+        console.log(numbersSUm);
+
+        // შექმენით ფუნქცია, რომელიც არგუმენტად მიიღებს ორ რიცხვს და დბრუნებს სხვაობას; ფუნქცია გამოიძახეთ და დალოგეთ კონსოლში
+        
+        function getDeduction(a,b) {
+            return a-b;
+        };
+        let deduction = getDeduction(89, 57);
+        console.log(deduction);
+       
+        // შექმენით <p>not click</p>ელემენტი და ღიალკზე დაჭერისას შეცვალეთ ამ ტექსტის მნიშნელობა "clicked" მნიშვნელობით ;
+        // დასელექთებულ p ელემენტს დაამატეთ შემდეგი სტილები: ფონტის ზომა:40, ფერი :წითელი;
+        
+        let text = document.getElementById("paragraph");
+        console.log(text);
+        text.addEventListener("click", function(){
+            if (text.textContent === "not clicked")
+            {
+                text.textContent = "click";
+                text.style.color = "red";
+                text.style.fontSize = "40px"; 
+            } else {
+              text.textContent = "not clicked";
+              text.style.color = "green";
+            }
+        })
+
+        
+    </script>
+    
+</body>
+</html>
